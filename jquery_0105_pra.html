@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<style>
+    body{ background-color:#6c9bb1;}
+    .wrap{ width:600px; margin:0 auto ;}
+    #jQuery-tab{ width:500px; height:200px;}
+    #jQuery-tab > ul{ display:block;}
+    #jQuery-tab > ul > li{ display:block; height:24px; line-height:24px; padding:0 15px; border:1px #ccc solid; float:left; margin:0 -1px -1px 0; background:#eee;}
+    #jQuery-tab > ul > li a{ color:rgb(51, 51, 51);}
+    #jQuery-tab > .content{ clear:both; padding:15px; border:1px #ccc solid; line-height:18px; color:#555;}
+    #jQuery-tab > .content h1{ font: 18px 'Oswald';  margin:0 0 10px 0;}
+    #jQuery-tab > ul > li.active{ background:#fff; border-bottom:1px #fff solid;}
+
+
+
+
+</style>
+    </head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <p>event click Lorem ipsum dolor, sit amet consectetur adipisicing elit. In fugit corporis quam
+                    perspiciatis qui
+                    harum earum recusandae maiores! Optio, quae!</p>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <input type="text" name="" id="focusInput">
+            </div>
+            <div class="col-12">
+                <input type="text" name="" id="focusInput1">
+            </div>
+            <div class="col-12">
+                <input type="text" name="" id="focusInput2">
+            </div>
+            <div class="col-12">
+                <input type="text" name="" id="focusInput3">
+            </div>
+        </div>
+    </div>
+    <!-- 先載入 -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+    <!-- 先載入 END-->
+    <script>
+        $(document).ready(function () {
+
+        });
+    </script>
+    <div class="wrap">
+        <div id="jQuery-tab">
+            <ul class="clearfix">
+            
+                <li class><a href="#tab1" title="">健康新知</a></li>
+                <li class><a href="#tab2" title="">菸害防治</a></li>
+                <li class><a href="#tab3" title="">癌症防治</a></li>
+                <li class><a href="#tab4" title="">慢性病防治</a></li>
+             
+            </ul>
+            <div id="tab1" class="content">
+                <h1>健康新知</h1>
+                <p>健康新知健康新知</p>
+            </div>
+            <div id="tab2" class="content">
+                <h1>菸害防治</h1>
+                <p>菸害防治菸害防治</p>
+            </div>
+            <div id="tab3" class="content">
+                <h1>癌症防治</h1>
+                <p>癌症防治癌症防治</p>
+            </div>
+            <div id="tab4" class="content">
+                <h1>慢性病防治</h1>
+                <p>慢性病防治慢性病防治</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            //前面的$可以不用加,後面那個是jquery的專用
+            var li = $('ul.clearfix li');
+            $(li.eq(0).addClass('active').find('a').attr('href')).siblings('.content').hide();
+            li.click(function () {
+                $($(this).find('a').attr("href")).show().siblings('.content').hide();
+                $(this).addClass('active').siblings('.active').removeClass('active');
+            });
+        });
+
+    </script>
+</body>
+
+</html>
