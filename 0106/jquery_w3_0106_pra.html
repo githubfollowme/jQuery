@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // eq method
+            $("p").eq(0).css("background-color", "lightblue");
+            $("p").eq(1).css("background-color", "yellow");
+            $("p").eq(2).css("background-color", "lightyellow");
+            $("p").eq(3).css("background-color", "red");
+            // 測試toggleClass 將原本的toggleClass("main")拆成兩個button功能
+            $("#add").click(function () {
+                $("p").toggleClass("main", true);
+            });
+            $("#remove").click(function () {
+                $("p").toggleClass("main", false)
+            });
+            // 練習reset清除按鈕
+            $(":reset");
+            // 練習remove empty
+            $("#dirRemove").click(function() {
+                // $(".politics").empty();
+                $(".politics").remove();
+            });
+        });
+    </script>
+    <style>
+        .main {
+            font-size: 50px;
+            color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <ol>
+        <!-- 第一個按鈕 紅黑色切換 -->
+        <li>XXXXXX</li>
+        <li>OOOOOO</li>
+    </ol>
+    <ol>
+        <!-- 第二個按鈕 用modal切換紅黑色 -->
+        <li>XXXXXX</li>
+        <li>OOOOOO</li>
+    </ol>
+    <div>
+        <h1>welcome to my homepage</h1>
+        <div class="politics" style="background-color: aqua;border:1px solid black";>
+            <p>Just vote for Donald Trump</p>
+            <p>My name is Joe Biden </p>
+        </div>
+            <p>or you just quit to vote them both?</p>
+            <p>or you can let taiwan bull shit help you</p>
+        <p><b>Note:</b>Click the toggle effect</p>
+        <p class="main">testing Main paragraph</p>
+        <!-- button是保留字 不要隨便加1在後面 -->
+        <button id="add">Add class Main</button>
+        <button id="remove">Toggle Remove class main</button>
+        <button id="dirRemove">directly remove or empty the element</button>
+
+        <form action="">
+            Name: <input type="text" name="user"><br>
+            Password: <input type="password" name="password"><br>
+            <!-- <button type="button">Useless Button </button> -->
+            <!-- 這個按鈕 是來搞笑的 -->
+            <!-- <input type="button">Another useless button</button><br> -->
+            I have a spiderman: <input type="checkbox" name="spiderman" value="toy1"><br>
+            I have a ironman: <input type="checkbox" name="ironman" value="toy2"><br>
+            <input type="reset" value="Reset">
+            <input type="submit" value="Submit"><br>
+        </form>
+
+    </div>
+    <!-- https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_last -->
+    <!-- https://www.w3schools.com/jquery/jquery_traversing_filtering.asp -->
+    <!-- https://www.w3schools.com/jquery/traversing_find.asp -->
+    <!-- https://www.w3schools.com/jquery/jquery_traversing_filtering.asp -->
+    <!-- https://www.w3schools.com/jquery/jquery_traversing_siblings.asp -->
+    <!-- https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_toggleclass_func -->
+    <!-- https://www.w3schools.com/js/js_dates.asp -->
+    <!-- https://www.w3schools.com/jsref/prop_win_localstorage.asp -->
+</body>
+
+
+
+
+</html>
