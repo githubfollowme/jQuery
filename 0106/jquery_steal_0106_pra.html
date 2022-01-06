@@ -8,22 +8,29 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-$("p").eq(1).css("background-color","yellow");
-});
-
-$(document).ready(function(){
-$("p").eq(0).css("background-color","lightblue");
-});
-
-$(document).ready(function(){
+    // eq method
+    $("p").eq(0).css("background-color","lightblue");
+    $("p").eq(1).css("background-color","yellow");
     $("p").eq(2).css("background-color","lightyellow");
 $("p").eq(3).css("background-color","red");
+// 測試toggleClass 將原本的toggleClass("main")拆成兩個button功能
+$("#add").click(function(){
+$("p").toggleClass("main",true);
+});
+$("#remove").click(function(){
+    $("p").toggleClass("main",false)
+});
 
 });
 
 
 </script>
-
+<style>
+    .main{
+        font-size: 50px;
+        color:blueviolet;
+    }
+</style>
 </head>
 <body>
 <ol>
@@ -37,11 +44,17 @@ $("p").eq(3).css("background-color","red");
     <li>XXXXXX</li>
     <li>OOOOOO</li>
 </ol>
-<button1></button1>
+<div>
     <h1>welcome to my homepage</h1>    
-<p>Just vote for Donald Trump (index 0)</p>
+<p>Just vote for Donald Trump</p>
 <p>My name is Joe Biden </p>
-<p>or you just quit to vote them both?(index 2)</p>
-<p>or you can let taiwan bull shit help you (index3)</p>
+<p>or you just quit to vote them both?</p>
+<p>or you can let taiwan bull shit help you</p>
+<p><b>Note:</b>Click the toggle effect</p>
+<p class="main">testing Main paragraph</p>
+<!-- button是保留字 不要隨便加1在後面 -->
+<button id="add">Add class Main</button>
+<button id="remove">Remove class main</button>
+</div>
 </body>
 </html>
